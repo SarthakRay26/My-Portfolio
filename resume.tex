@@ -1,0 +1,277 @@
+% Academic CV LaTeX Template
+% Author: Dubasi Pavan Kumar (Modified for Sarthak Ray)
+% License: MIT
+
+\documentclass[a4paper,11pt]{article}
+
+% Package imports
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome5}
+
+% Color definitions
+\definecolor{darkblue}{RGB}{0,0,139}
+
+% Page layout
+\setlength{\multicolsep}{0pt} 
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.0cm, top=0.5cm, right=1.0cm, bottom=0.5cm}
+\setlength{\footskip}{5pt} % Addressing fancyhdr warning
+
+% Hyperlink setup
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    filecolor=darkblue,
+    urlcolor=darkblue,
+}
+
+% Custom box settings
+\usepackage[most]{tcolorbox}
+\tcbset{
+    frame code={},
+    center title,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+    colback=gray!20,
+    colframe=white,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=-2mm,
+    boxsep=4pt,
+    arc=0pt,outer arc=0pt,
+}
+
+% URL style
+\urlstyle{same}
+
+% Text alignment
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-2pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} 
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.2mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.2mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\circ$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm,itemsep=0.5mm]}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{1mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-1mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-1mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+
+% Commands for icon sizing and positioning
+\newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{!}{1em}{#1}}}
+\newcommand{\ieeeicon}[1]{\raisebox{-0.3em}{\resizebox{!}{1.3em}{#1}}}
+
+% Font selection (Palatino)
+\newcommand{\headerfonti}{\fontfamily{phv}\selectfont} % Helvetica-like
+\newcommand{\headerfontii}{\fontfamily{ptm}\selectfont} % Times-like
+\newcommand{\headerfontiii}{\fontfamily{ppl}\selectfont} % Palatino
+\newcommand{\headerfontiv}{\fontfamily{pbk}\selectfont} % Bookman
+\newcommand{\headerfontv}{\fontfamily{pag}\selectfont} % Avant Garde-like
+\newcommand{\headerfontvi}{\fontfamily{cmss}\selectfont} % Computer Modern Sans Serif
+\newcommand{\headerfontvii}{\fontfamily{qhv}\selectfont} % Quasi-Helvetica
+\newcommand{\headerfontviii}{\fontfamily{qpl}\selectfont} % Quasi-Palatino
+\newcommand{\headerfontix}{\fontfamily{qtm}\selectfont} % Quasi-Times
+\newcommand{\headerfontx}{\fontfamily{bch}\selectfont} % Charter
+
+\begin{document}
+\headerfontiii
+
+% Header
+\begin{center}
+    {\Large\textbf{Sarthak Ray}}
+\end{center}
+\vspace{-4mm}
+
+\begin{center}
+    \footnotesize{
+    +91 91430 60403 | \href{mailto:raysarthak26@gmail.com}{raysarthak26@gmail.com} | 
+    \href{https://sarthakray.me/}{Portfolio} | 
+    \socialicon{\faLinkedin} \href{https://www.linkedin.com/in/sarthak-ray-683910256}{LinkedIn} | 
+    \socialicon{\faGithub} \href{https://github.com/sarthakray26}{GitHub} | 
+    Kolkata, India
+    }
+\end{center}
+\vspace{-2mm}
+
+\section{\textbf{Education}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Vellore Institute of Technology}{Vellore, India}
+{B.Tech Computer Science and Engineering}{2022-Present}
+\resumeItemListStart
+\item CGPA: 8.87/10.0 
+\resumeItemListEnd
+
+\resumeSubheading
+{St. Xavier's Institution}{West Bengal, India}
+{Higher Secondary Education (ICSE)}{2020 – 2022}
+\resumeItemListStart
+\item \textbf{Class XII} – 94.6\% | \textbf{Class X} – 96.7\%
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-2mm}
+
+\section{\textbf{Technical Skills}}
+\vspace{-0.2mm}
+\resumeHeadingSkillStart
+\item \textbf{Programming Languages:} C, C++, JavaScript, Python, Java, CSS3, HTML5
+\item \textbf{Frameworks \& Libraries:} React.js, Node.js, Express.js, Next.js, TensorFlow, Tailwind CSS
+\item \textbf{Databases \& Cloud:} MongoDB, MySQL, AWS (EC2, S3, Lambda), Heroku, Vercel
+\item \textbf{Developer Tools:} Git, GitHub, Postman, Vite, VS Code, Docker (Basic)
+\resumeHeadingSkillEnd
+\vspace{-1mm}
+
+\section{\textbf{Experience}}
+\vspace{-0.2mm}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Amazon Web Services [\href{https://www.credly.com/go/vueaaK7N6sve4r07AVqQQw}{\faIcon{globe}}]}{Remote}
+{AWS Certified Cloud Practitioner}{July 2024}
+\resumeItemListStart
+\item Achieved AWS Cloud Practitioner certification demonstrating expertise in 6 core AWS service categories
+\item Mastered cloud fundamentals, billing optimization, and deployment models across 130+ AWS services
+\resumeItemListEnd 
+
+\resumeSubheading
+{Smartinternz [\href{https://www.thesmartbridge.com/}{\faIcon{globe}}]}{India}
+{Full Stack Developer Intern}{June 2024 - Aug 2024}
+\resumeItemListStart
+\item Developed restaurant management platform "SnackSpirit" serving 200+ users using MERN stack architecture
+\item Collaborated with 5-member development team to deliver project 2 weeks ahead of schedule
+\item Implemented responsive design patterns increasing mobile user engagement by 40\%
+\item Optimized database queries reducing page load times by 35\% across 10+ application modules
+\resumeItemListEnd 
+
+\resumeSubheading
+{MongoDB [\href{https://learn.mongodb.com/learning-paths/mongodb-nodejs-developer-path-for-smartbridge}{\faIcon{globe}}]}{Remote}
+{Node.js Developer Path Certification}{June 2024}
+\resumeItemListStart
+\item Completed 40-hour MongoDB Atlas developer certification covering advanced Node.js database integration
+\item Implemented 8+ database optimization techniques improving query performance by average 50\%
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+\vspace{-2mm}
+
+\section{\textbf{Technical Projects \& Hackathons}}
+\vspace{-0.2mm}
+\resumeSubHeadingListStart
+
+\resumeProject
+{Paw Recognition: AI-powered pet identification system}
+{Next.js, TensorFlow, Llama 3.1 API}
+{August 2024}
+{[\href{https://pawrecognition.vercel.app/}{\faIcon{globe}}]}
+\resumeItemListStart
+\item Developed AI system with 92\% breed classification accuracy serving 500+ users
+\resumeItemListEnd
+
+\resumeProject
+{SnackSpirit: Restaurant management platform}
+{MERN Stack, RESTful APIs}
+{June 2024}
+{[\href{https://github.com/SarthakRay26/SBFoods-SmartInternz}{\textcolor{darkblue}{\faGithub}}]}
+\resumeItemListStart
+\item Built web application handling 200+ concurrent users with 99.5\% uptime
+\resumeItemListEnd
+
+\resumeProject
+{Museum Ticketing Chatbot: AI visitor assistance}
+{MERN Stack, Grok AI, Payment Gateway}
+{March 2024}
+{[\href{https://museum-booking.vercel.app}{\faIcon{globe}}]}
+\resumeItemListStart
+\item Engineered AI chatbot with 85\% query resolution rate and payment integration
+\resumeItemListEnd
+
+\resumeProject
+{Crime Investigation AI (Top 10 Finalist)}
+{Tredence Infinity AI Hackathon}
+{March 2024}
+{Bangalore}
+\resumeItemListStart
+\item Achieved top 10 placement among 500+ teams in national-level AI competition
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\end{document}
