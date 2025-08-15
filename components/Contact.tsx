@@ -257,8 +257,6 @@ const Contact: React.FC = () => {
               
               <form 
                 onSubmit={handleSubmit} 
-                action="https://formspree.io/f/mnnzryrz"
-                method="POST"
                 className="space-y-6"
               >
                 <div className="grid md:grid-cols-2 gap-6">

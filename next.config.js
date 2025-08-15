@@ -5,9 +5,6 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  experimental: {
-    optimizeCss: true,
-  },
   images: {
     domains: ['images.unsplash.com'],
     formats: ['image/webp', 'image/avif'],
