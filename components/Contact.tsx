@@ -43,17 +43,37 @@ const Contact: React.FC = () => {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormData({ name: '', email: '', subject: '', message: '' })
-    }, 3000)
+    try {
+      const response = await fetch('https://formspree.io/f/mnnzryrz', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      })
+
+      if (response.ok) {
+        setIsSubmitted(true)
+        setFormData({ name: '', email: '', subject: '', message: '' })
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          setIsSubmitted(false)
+        }, 5000)
+      } else {
+        throw new Error('Failed to send message')
+      }
+    } catch (error) {
+      console.error('Error sending message:', error)
+      alert('Failed to send message. Please try again or contact me directly.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const contactInfo = [
@@ -62,21 +82,21 @@ const Contact: React.FC = () => {
       label: 'Email',
       value: 'raysarthak26@gmail.com',
       href: 'mailto:raysarthak26@gmail.com',
-      color: 'from-gray-light to-accent-silver'
+      color: 'from-vibrant-orange to-vibrant-red'
     },
     {
       icon: Phone,
       label: 'Phone',
       value: '+91 91430 60403',
       href: 'tel:+919143060403',
-      color: 'from-accent-silver to-accent-gray'
+      color: 'from-vibrant-green to-vibrant-blue'
     },
     {
       icon: MapPin,
       label: 'Location',
       value: 'Kolkata, India',
       href: 'https://maps.google.com/?q=Kolkata,India',
-      color: 'from-accent-gray to-gray-medium'
+      color: 'from-vibrant-violet to-vibrant-pink'
     }
   ]
 
@@ -85,15 +105,14 @@ const Contact: React.FC = () => {
       icon: Github,
       label: 'GitHub',
       href: 'https://github.com/sarthakray26',
-      color: 'hover:text-gray-300'
+      color: 'hover:text-vibrant-violet'
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
       href: 'https://www.linkedin.com/in/sarthak-ray-683910256',
-      color: 'hover:text-blue-400'
+      color: 'hover:text-vibrant-blue'
     }
-    
   ]
 
   const containerVariants = {
@@ -159,7 +178,7 @@ const Contact: React.FC = () => {
           >
             <motion.div variants={itemVariants}>
               <h3 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
-                <MessageCircle className="w-8 h-8 text-neon-blue" />
+                <MessageCircle className="w-8 h-8 text-vibrant-cyan" />
                 Let's Connect
               </h3>
             </motion.div>
@@ -236,7 +255,12 @@ const Contact: React.FC = () => {
             >
               <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form 
+                onSubmit={handleSubmit} 
+                action="https://formspree.io/f/mnnzryrz"
+                method="POST"
+                className="space-y-6"
+              >
                 <div className="grid md:grid-cols-2 gap-6">
                   <motion.div variants={itemVariants}>
                     <label className="block text-white font-medium mb-2">Name</label>

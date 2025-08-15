@@ -100,7 +100,7 @@ const Projects: React.FC = () => {
   }
 
   return (
-    <section className="min-h-screen py-20 px-4 relative bg-gradient-to-b from-black via-gray-800/15 to-black">
+    <section id="projects" className="min-h-screen py-20 px-4 relative bg-gradient-to-b from-black via-gray-800/15 to-black">
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={ref}

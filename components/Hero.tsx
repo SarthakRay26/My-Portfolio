@@ -9,6 +9,22 @@ const Hero: React.FC = () => {
   const fullText = 'Full Stack Developer & AWS Cloud Practitioner'
   const [showCursor, setShowCursor] = useState(true)
 
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById('projects')
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
+  const downloadResume = () => {
+    const link = document.createElement('a')
+    link.href = '/resume.pdf'
+    link.download = 'Sarthak_Ray_Resume.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   useEffect(() => {
     let index = 0
     const timer = setInterval(() => {
@@ -136,6 +152,7 @@ const Hero: React.FC = () => {
           className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
         >
           <motion.button
+            onClick={downloadResume}
             whileHover={{ 
               scale: 1.05,
               boxShadow: "0 0 30px rgba(255, 20, 147, 0.5)"
@@ -148,6 +165,7 @@ const Hero: React.FC = () => {
           </motion.button>
           
           <motion.button
+            onClick={scrollToProjects}
             whileHover={{ 
               scale: 1.05,
               boxShadow: "0 0 30px rgba(0, 255, 255, 0.5)"

@@ -6,15 +6,6 @@ import { Menu, X, Github, Linkedin, Mail, ExternalLink } from 'lucide-react'
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -25,23 +16,18 @@ const Navbar: React.FC = () => {
   ]
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/sarthakray26', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://www.linkedin.com/in/sarthak-ray-683910256', label: 'LinkedIn' },
-    { icon: ExternalLink, href: 'https://sarthakray.me/', label: 'Portfolio' },
-    { icon: Mail, href: 'mailto:raysarthak26@gmail.com', label: 'Email' },
+    { icon: Github, href: 'https://github.com/sarthakray26', label: 'GitHub', color: 'hover:text-vibrant-violet' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/sarthak-ray-683910256', label: 'LinkedIn', color: 'hover:text-vibrant-blue' },
+    { icon: Mail, href: 'mailto:raysarthak26@gmail.com', label: 'Email', color: 'hover:text-vibrant-orange' },
   ]
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-black/95 backdrop-blur-md shadow-lg shadow-gray-700/20 border-b border-white/10' 
-          : 'bg-black/80 backdrop-blur-sm border-b border-white/5'
-      }`}
+      className="fixed top-0 w-full z-50 transition-all duration-300 bg-black/80 backdrop-blur-sm border-b border-white/5"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <motion.div
@@ -79,7 +65,7 @@ const Navbar: React.FC = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
-                className="text-white hover:text-vibrant-green transition-colors duration-300 drop-shadow-sm"
+                className={`text-white ${link.color} transition-colors duration-300 drop-shadow-sm`}
               >
                 <link.icon size={20} />
               </motion.a>
@@ -126,7 +112,7 @@ const Navbar: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2 }}
-                className="text-white hover:text-accent-gray transition-colors duration-300"
+                className={`text-white ${link.color} transition-colors duration-300`}
               >
                 <link.icon size={20} />
               </motion.a>
