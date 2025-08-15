@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-black/90 backdrop-blur-md shadow-lg shadow-neon-blue/20' 
+          ? 'bg-gray-900/90 backdrop-blur-md shadow-lg shadow-gray-700/20' 
           : 'bg-transparent'
       }`}
     >
@@ -49,9 +49,9 @@ const Navbar: React.FC = () => {
             whileTap={{ scale: 0.9 }}
             className="cyber-font text-2xl font-bold text-white"
           >
-            <span className="text-neon-blue">S</span>
-            <span className="text-neon-purple">R</span>
-            <span className="text-neon-pink">.</span>
+            <span className="text-vibrant-red">S</span>
+            <span className="text-vibrant-blue">R</span>
+            <span className="text-vibrant-yellow">.</span>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -61,10 +61,10 @@ const Navbar: React.FC = () => {
                 key={item.name}
                 href={item.href}
                 whileHover={{ y: -2 }}
-                className="text-white hover:text-neon-blue transition-colors duration-300 relative group"
+                className="text-white hover:text-vibrant-cyan transition-colors duration-300 relative group"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-neon-pink to-neon-blue group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-white to-gray-400 group-hover:w-full transition-all duration-300"></span>
               </motion.a>
             ))}
           </div>
@@ -79,7 +79,7 @@ const Navbar: React.FC = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
-                className="text-white hover:text-neon-blue transition-colors duration-300"
+                className="text-white hover:text-vibrant-green transition-colors duration-300"
               >
                 <link.icon size={20} />
               </motion.a>
@@ -113,7 +113,7 @@ const Navbar: React.FC = () => {
               href={item.href}
               onClick={() => setIsOpen(false)}
               whileHover={{ x: 10 }}
-              className="block text-white hover:text-neon-blue transition-colors duration-300"
+              className="block text-white hover:text-accent-gray transition-colors duration-300"
             >
               {item.name}
             </motion.a>
@@ -126,7 +126,7 @@ const Navbar: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2 }}
-                className="text-white hover:text-neon-blue transition-colors duration-300"
+                className="text-white hover:text-accent-gray transition-colors duration-300"
               >
                 <link.icon size={20} />
               </motion.a>

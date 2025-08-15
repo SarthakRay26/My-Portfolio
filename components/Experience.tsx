@@ -3,7 +3,19 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Award, MapPin, Calendar, ExternalLink, Users, TrendingUp } from 'lucide-react'
+import { Award, MapPin, Calendar, ExternalLink, Users, TrendingUp, Code, LucideIcon } from 'lucide-react'
+
+interface ExperienceItem {
+  title: string
+  company: string
+  location: string
+  period: string
+  type: string
+  icon: LucideIcon
+  color: string
+  achievements?: string[]
+  link: string
+}
 
 const Experience: React.FC = () => {
   const [ref, inView] = useInView({
@@ -11,7 +23,7 @@ const Experience: React.FC = () => {
     threshold: 0.1,
   })
 
-  const experiences = [
+  const experiences: ExperienceItem[] = [
     {
       title: 'AWS Certified Cloud Practitioner',
       company: 'Amazon Web Services',
@@ -20,27 +32,7 @@ const Experience: React.FC = () => {
       type: 'Certification',
       icon: Award,
       color: 'from-yellow-400 to-orange-500',
-      achievements: [
-        'Achieved AWS Cloud Practitioner certification demonstrating expertise in 6 core AWS service categories',
-        'Mastered cloud fundamentals, billing optimization, and deployment models across 130+ AWS services'
-      ],
       link: 'https://www.credly.com/go/vueaaK7N6sve4r07AVqQQw'
-    },
-    {
-      title: 'Full Stack Developer Intern',
-      company: 'Smartinternz',
-      location: 'India',
-      period: 'June 2024 - Aug 2024',
-      type: 'Internship',
-      icon: Users,
-      color: 'from-neon-pink to-neon-purple',
-      achievements: [
-        'Developed restaurant management platform "SnackSpirit" serving 200+ users using MERN stack architecture',
-        'Collaborated with 5-member development team to deliver project 2 weeks ahead of schedule',
-        'Implemented responsive design patterns increasing mobile user engagement by 40%',
-        'Optimized database queries reducing page load times by 35% across 10+ application modules'
-      ],
-      link: 'https://www.thesmartbridge.com/'
     },
     {
       title: 'Node.js Developer Path Certification',
@@ -50,11 +42,33 @@ const Experience: React.FC = () => {
       type: 'Certification',
       icon: TrendingUp,
       color: 'from-green-400 to-blue-500',
-      achievements: [
-        'Completed 40-hour MongoDB Atlas developer certification covering advanced Node.js database integration',
-        'Implemented 8+ database optimization techniques improving query performance by average 50%'
-      ],
       link: 'https://learn.mongodb.com/learning-paths/mongodb-nodejs-developer-path-for-smartbridge'
+    },
+    {
+      title: 'Software Engineering Virtual Experience',
+      company: 'JP Morgan Chase & Co.',
+      location: 'Remote',
+      period: 'August 2025',
+      type: 'Certification',
+      icon: Code,
+      color: 'from-blue-400 to-blue-600',
+      link: 'https://drive.google.com/file/d/1KlvOyfkaHEOcLSST4qVuUvU_FwLfs5XB/view?usp=sharing'
+    },
+    {
+      title: 'Full Stack Developer Intern',
+      company: 'Smartinternz',
+      location: 'India',
+      period: 'June 2024 - Aug 2024',
+      type: 'Internship',
+      icon: Users,
+      color: 'from-gray-light to-accent-silver',
+      achievements: [
+        'Developed restaurant management platform "SnackSpirit" serving 200+ users using MERN stack architecture',
+        'Collaborated with 5-member development team to deliver project 2 weeks ahead of schedule',
+        'Implemented responsive design patterns increasing mobile user engagement by 40%',
+        'Optimized database queries reducing page load times by 35% across 10+ application modules'
+      ],
+      link: 'https://www.thesmartbridge.com/'
     }
   ]
 
@@ -83,7 +97,7 @@ const Experience: React.FC = () => {
   }
 
   return (
-    <section className="min-h-screen py-20 px-4 relative">
+    <section className="min-h-screen py-20 px-4 relative bg-gradient-to-b from-black via-gray-800/10 to-black">
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={ref}
@@ -97,7 +111,7 @@ const Experience: React.FC = () => {
             className="text-5xl md:text-7xl font-bold cyber-font mb-6"
           >
             <span className="text-white">Experience </span>
-            <span className="bg-gradient-to-r from-neon-purple to-neon-blue bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
               & Certifications
             </span>
           </motion.h2>
@@ -144,7 +158,7 @@ const Experience: React.FC = () => {
                     
                     <div>
                       <h3 className="text-2xl font-bold text-white mb-2">{exp.title}</h3>
-                      <h4 className="text-xl text-neon-blue font-semibold mb-2">{exp.company}</h4>
+                                            <h4 className="text-xl text-accent-gray font-semibold mb-2">{exp.company}</h4>
                       
                       <div className="flex flex-wrap gap-4 text-gray-400">
                         <div className="flex items-center gap-1">
@@ -173,27 +187,29 @@ const Experience: React.FC = () => {
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.2, rotate: 15 }}
                       whileTap={{ scale: 0.9 }}
-                      className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-neon-blue hover:text-black transition-all duration-300"
+                      className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-accent-gray hover:text-black transition-all duration-300"
                     >
                       <ExternalLink className="w-5 h-5" />
                     </motion.a>
                   </div>
                 </div>
                 
-                <div className="space-y-3">
-                  {exp.achievements.map((achievement, achievementIndex) => (
-                    <motion.div
-                      key={achievementIndex}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: achievementIndex * 0.1 }}
-                      className="flex items-start gap-3"
-                    >
-                      <div className="w-2 h-2 bg-neon-blue rounded-full mt-2 flex-shrink-0" />
-                      <p className="text-gray-300 leading-relaxed">{achievement}</p>
-                    </motion.div>
-                  ))}
-                </div>
+                {exp.achievements && (
+                  <div className="space-y-3">
+                    {exp.achievements.map((achievement, achievementIndex) => (
+                      <motion.div
+                        key={achievementIndex}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: achievementIndex * 0.1 }}
+                        className="flex items-start gap-3"
+                      >
+                        <div className="w-2 h-2 bg-accent-gray rounded-full mt-2 flex-shrink-0" />
+                        <p className="text-gray-300 leading-relaxed">{achievement}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}

@@ -16,25 +16,25 @@ const About: React.FC = () => {
       category: 'Programming Languages',
       items: ['C', 'C++', 'JavaScript', 'Python', 'Java', 'CSS3', 'HTML5'],
       icon: Code,
-      color: 'from-neon-pink to-neon-purple'
+      color: 'from-vibrant-red to-vibrant-orange'
     },
     {
       category: 'Frameworks & Libraries',
       items: ['React.js', 'Node.js', 'Express.js', 'Next.js', 'TensorFlow', 'Tailwind CSS'],
       icon: Server,
-      color: 'from-neon-purple to-neon-blue'
+      color: 'from-vibrant-yellow to-vibrant-green'
     },
     {
       category: 'Databases & Cloud',
       items: ['MongoDB', 'MySQL', 'AWS (EC2, S3, Lambda)', 'Heroku', 'Vercel'],
       icon: Database,
-      color: 'from-neon-blue to-cyber-blue'
+      color: 'from-vibrant-blue to-vibrant-indigo'
     },
     {
       category: 'Developer Tools',
       items: ['Git', 'GitHub', 'Postman', 'Vite', 'VS Code', 'Docker (Basic)'],
       icon: Cloud,
-      color: 'from-cyber-blue to-neon-pink'
+      color: 'from-vibrant-violet to-vibrant-pink'
     }
   ]
 
@@ -63,7 +63,7 @@ const About: React.FC = () => {
   }
 
   return (
-    <section className="min-h-screen py-20 px-4 relative">
+    <section className="min-h-screen py-20 px-4 relative bg-gradient-to-b from-black via-gray-900/20 to-black">
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={ref}
@@ -77,14 +77,14 @@ const About: React.FC = () => {
             className="text-5xl md:text-7xl font-bold cyber-font mb-6"
           >
             <span className="text-white">About </span>
-            <span className="bg-gradient-to-r from-neon-pink to-neon-blue bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
               Me
             </span>
           </motion.h2>
           
           <motion.p
             variants={itemVariants}
-            className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed"
           >
             I'm a passionate Computer Science student at Vellore Institute of Technology with a strong foundation 
             in full-stack development and cloud technologies. With a CGPA of 8.87/10, I combine academic excellence 
@@ -110,39 +110,39 @@ const About: React.FC = () => {
             <motion.div
               variants={itemVariants}
               whileHover={{ scale: 1.05, rotateY: 5 }}
-              className="glass-morphism p-8 rounded-2xl border border-neon-blue/30"
+              className="glass-morphism p-8 rounded-2xl border border-vibrant-blue/30"
             >
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-neon-pink to-neon-purple rounded-full flex items-center justify-center mr-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-vibrant-green to-vibrant-blue rounded-full flex items-center justify-center mr-4">
                   <Brain className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h4 className="text-xl font-bold text-white">Vellore Institute of Technology</h4>
-                  <p className="text-neon-blue">B.Tech Computer Science and Engineering</p>
+                  <p className="text-vibrant-cyan">B.Tech Computer Science and Engineering</p>
                 </div>
               </div>
               <p className="text-gray-300 mb-2">2022 - Present</p>
-              <p className="text-2xl font-bold text-neon-pink">CGPA: 8.87/10.0</p>
+              <p className="text-2xl font-bold text-vibrant-yellow">CGPA: 8.87/10.0</p>
             </motion.div>
 
             <motion.div
               variants={itemVariants}
               whileHover={{ scale: 1.05, rotateY: -5 }}
-              className="glass-morphism p-8 rounded-2xl border border-neon-purple/30"
+              className="glass-morphism p-8 rounded-2xl border border-vibrant-violet/30"
             >
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-neon-blue to-cyber-blue rounded-full flex items-center justify-center mr-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-vibrant-orange to-vibrant-red rounded-full flex items-center justify-center mr-4">
                   <Smartphone className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h4 className="text-xl font-bold text-white">St. Xavier's Institution</h4>
-                  <p className="text-neon-purple">Higher Secondary Education (ICSE)</p>
+                  <p className="text-vibrant-pink">Higher Secondary Education (ICSE)</p>
                 </div>
               </div>
               <p className="text-gray-300 mb-2">2020 - 2022</p>
               <div className="space-y-1">
-                <p className="text-lg font-semibold text-neon-blue">Class XII: 94.6%</p>
-                <p className="text-lg font-semibold text-neon-pink">Class X: 96.7%</p>
+                <p className="text-lg font-semibold text-vibrant-green">Class XII: 94.6%</p>
+                <p className="text-lg font-semibold text-vibrant-blue">Class X: 96.7%</p>
               </div>
             </motion.div>
           </div>
@@ -188,7 +188,7 @@ const About: React.FC = () => {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: skillIndex * 0.1 }}
                       whileHover={{ scale: 1.1 }}
-                      className="px-3 py-1 bg-gradient-to-r from-white/10 to-white/5 rounded-full text-sm text-gray-300 border border-white/20 hover:border-neon-blue/50 transition-all duration-300"
+                      className="px-3 py-1 bg-gradient-to-r from-white/10 to-white/5 rounded-full text-sm text-gray-300 border border-white/20 hover:border-accent-gray/50 transition-all duration-300"
                     >
                       {skill}
                     </motion.span>

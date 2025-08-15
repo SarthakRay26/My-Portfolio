@@ -25,7 +25,7 @@ const ParticleBackground: React.FC = () => {
       opacity: number
     }> = []
 
-    const colors = ['#ff006e', '#8338ec', '#3a86ff', '#00d4ff']
+    const colors = ['#ffffff', '#cccccc', '#888888', '#666666']
 
     // Create particles
     for (let i = 0; i < 100; i++) {
@@ -111,7 +111,7 @@ const ParticleBackground: React.FC = () => {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 w-full h-full pointer-events-none z-0"
-      style={{ background: 'linear-gradient(135deg, #0f0f23 0%, #1a1a3a 100%)' }}
+      style={{ background: 'linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%)' }}
     />
   )
 }

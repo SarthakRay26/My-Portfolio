@@ -13,7 +13,7 @@ import PerformanceToggle from '../components/PerformanceToggle'
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-gradient-to-br from-cyber-dark via-purple-900 to-black">
+    <main className="relative min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
       <ParticleBackground />
       <Navbar />
       <PerformanceToggle />

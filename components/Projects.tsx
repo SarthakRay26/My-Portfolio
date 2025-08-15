@@ -22,7 +22,7 @@ const Projects: React.FC = () => {
       image: '/api/placeholder/600/400',
       featured: true,
       stats: { users: '500+', accuracy: '92%' },
-      color: 'from-neon-pink to-neon-purple'
+      color: 'from-vibrant-red to-vibrant-orange'
     },
     {
       title: 'SnackSpirit',
@@ -34,7 +34,7 @@ const Projects: React.FC = () => {
       image: '/api/placeholder/600/400',
       featured: true,
       stats: { users: '200+', uptime: '99.5%' },
-      color: 'from-neon-purple to-neon-blue'
+      color: 'from-vibrant-yellow to-vibrant-green'
     },
     {
       title: 'Museum Ticketing Chatbot',
@@ -46,7 +46,7 @@ const Projects: React.FC = () => {
       image: '/api/placeholder/600/400',
       featured: false,
       stats: { resolution: '85%', queries: '1000+' },
-      color: 'from-neon-blue to-cyber-blue'
+      color: 'from-vibrant-blue to-vibrant-indigo'
     },
     {
       title: 'Crime Investigation AI',
@@ -58,7 +58,7 @@ const Projects: React.FC = () => {
       image: '/api/placeholder/600/400',
       featured: false,
       stats: { rank: 'Top 10', teams: '500+' },
-      color: 'from-cyber-blue to-neon-pink',
+      color: 'from-vibrant-violet to-vibrant-pink',
       achievement: true
     }
   ]
@@ -88,7 +88,7 @@ const Projects: React.FC = () => {
   }
 
   return (
-    <section className="min-h-screen py-20 px-4 relative">
+    <section className="min-h-screen py-20 px-4 relative bg-gradient-to-b from-black via-gray-800/15 to-black">
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={ref}
@@ -102,7 +102,7 @@ const Projects: React.FC = () => {
             className="text-5xl md:text-7xl font-bold cyber-font mb-6"
           >
             <span className="text-white">Featured </span>
-            <span className="bg-gradient-to-r from-neon-blue to-neon-pink bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
               Projects
             </span>
           </motion.h2>
@@ -138,25 +138,13 @@ const Projects: React.FC = () => {
               {/* Background gradient */}
               <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
               
-              {/* Achievement badge */}
-              {project.achievement && (
-                <motion.div
-                  initial={{ scale: 0, rotate: -45 }}
-                  animate={{ scale: 1, rotate: 0 }}
-                  className="absolute top-4 right-4 z-20 bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1"
-                >
-                  <Award className="w-4 h-4" />
-                  Award Winner
-                </motion.div>
-              )}
-              
               <div className="relative z-10 p-8">
                 {/* Project header */}
                 <div className="mb-6">
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
-                      <p className="text-neon-blue font-semibold">{project.subtitle}</p>
+                      <p className="text-vibrant-cyan font-semibold">{project.subtitle}</p>
                     </div>
                     
                     <div className="flex gap-3">
@@ -167,7 +155,7 @@ const Projects: React.FC = () => {
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.2, rotate: 15 }}
                           whileTap={{ scale: 0.9 }}
-                          className="w-10 h-10 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full flex items-center justify-center text-white hover:shadow-lg hover:shadow-neon-blue/50 transition-all duration-300"
+                          className="w-10 h-10 bg-gradient-to-r from-vibrant-blue to-vibrant-indigo rounded-full flex items-center justify-center text-white hover:shadow-lg hover:shadow-vibrant-blue/50 transition-all duration-300"
                         >
                           <ExternalLink className="w-5 h-5" />
                         </motion.a>
@@ -180,7 +168,7 @@ const Projects: React.FC = () => {
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.2, rotate: -15 }}
                           whileTap={{ scale: 0.9 }}
-                          className="w-10 h-10 bg-gradient-to-r from-neon-purple to-neon-pink rounded-full flex items-center justify-center text-white hover:shadow-lg hover:shadow-neon-purple/50 transition-all duration-300"
+                          className="w-10 h-10 bg-gradient-to-r from-vibrant-violet to-vibrant-pink rounded-full flex items-center justify-center text-white hover:shadow-lg hover:shadow-vibrant-violet/50 transition-all duration-300"
                         >
                           <Github className="w-5 h-5" />
                         </motion.a>
@@ -241,10 +229,10 @@ const Projects: React.FC = () => {
           <motion.button
             whileHover={{ 
               scale: 1.05,
-              boxShadow: "0 0 30px rgba(58, 134, 255, 0.5)"
+              boxShadow: "0 0 30px rgba(204, 204, 204, 0.3)"
             }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full font-semibold text-white text-lg hover:shadow-lg transition-all duration-300 flex items-center gap-2 mx-auto"
+            className="px-8 py-4 bg-gradient-to-r from-gray-700 to-gray-500 rounded-full font-semibold text-white text-lg hover:shadow-lg transition-all duration-300 flex items-center gap-2 mx-auto"
           >
             <Github className="w-5 h-5" />
             View All Projects on GitHub

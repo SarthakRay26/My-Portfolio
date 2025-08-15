@@ -62,21 +62,21 @@ const Contact: React.FC = () => {
       label: 'Email',
       value: 'raysarthak26@gmail.com',
       href: 'mailto:raysarthak26@gmail.com',
-      color: 'from-neon-pink to-neon-purple'
+      color: 'from-gray-light to-accent-silver'
     },
     {
       icon: Phone,
       label: 'Phone',
       value: '+91 91430 60403',
       href: 'tel:+919143060403',
-      color: 'from-neon-purple to-neon-blue'
+      color: 'from-accent-silver to-accent-gray'
     },
     {
       icon: MapPin,
       label: 'Location',
       value: 'Kolkata, India',
       href: 'https://maps.google.com/?q=Kolkata,India',
-      color: 'from-neon-blue to-cyber-blue'
+      color: 'from-accent-gray to-gray-medium'
     }
   ]
 
@@ -92,13 +92,8 @@ const Contact: React.FC = () => {
       label: 'LinkedIn',
       href: 'https://www.linkedin.com/in/sarthak-ray-683910256',
       color: 'hover:text-blue-400'
-    },
-    {
-      icon: ExternalLink,
-      label: 'Portfolio',
-      href: 'https://sarthakray.me/',
-      color: 'hover:text-neon-blue'
     }
+    
   ]
 
   const containerVariants = {
@@ -126,7 +121,7 @@ const Contact: React.FC = () => {
   }
 
   return (
-    <section className="min-h-screen py-20 px-4 relative">
+    <section className="min-h-screen py-20 px-4 relative bg-gradient-to-t from-gray-900/20 via-black to-black">
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={ref}
@@ -140,7 +135,7 @@ const Contact: React.FC = () => {
             className="text-5xl md:text-7xl font-bold cyber-font mb-6"
           >
             <span className="text-white">Get In </span>
-            <span className="bg-gradient-to-r from-neon-pink to-neon-blue bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
               Touch
             </span>
           </motion.h2>
@@ -251,7 +246,7 @@ const Contact: React.FC = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-neon-blue focus:outline-none transition-colors duration-300"
+                      className="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-accent-gray focus:outline-none transition-colors duration-300"
                       placeholder="Your Name"
                     />
                   </motion.div>
@@ -264,7 +259,7 @@ const Contact: React.FC = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-neon-blue focus:outline-none transition-colors duration-300"
+                      className="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-accent-gray focus:outline-none transition-colors duration-300"
                       placeholder="your.email@example.com"
                     />
                   </motion.div>
@@ -278,7 +273,7 @@ const Contact: React.FC = () => {
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-neon-blue focus:outline-none transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-accent-gray focus:outline-none transition-colors duration-300"
                     placeholder="What's this about?"
                   />
                 </motion.div>
@@ -291,7 +286,7 @@ const Contact: React.FC = () => {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-neon-blue focus:outline-none transition-colors duration-300 resize-none"
+                    className="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-accent-gray focus:outline-none transition-colors duration-300 resize-none"
                     placeholder="Tell me about your project or opportunity..."
                   />
                 </motion.div>
@@ -305,7 +300,7 @@ const Contact: React.FC = () => {
                   className={`w-full py-4 rounded-xl font-semibold text-white text-lg transition-all duration-300 flex items-center justify-center gap-2 ${
                     isSubmitted 
                       ? 'bg-green-500 hover:bg-green-600' 
-                      : 'bg-gradient-to-r from-neon-pink to-neon-purple hover:shadow-lg hover:shadow-neon-purple/50'
+                      : 'bg-gradient-to-r from-gray-700 to-gray-500 hover:shadow-lg hover:shadow-gray-600/50'
                   }`}
                 >
                   {isSubmitting ? (

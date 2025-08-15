@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
               repeat: Infinity,
               ease: "linear"
             }}
-            className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-neon-pink/20 to-neon-blue/20 rounded-full blur-3xl"
+            className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-gray-800/30 to-gray-600/20 rounded-full blur-3xl"
           />
           <motion.div
             animate={{
@@ -76,7 +76,7 @@ const Hero: React.FC = () => {
               repeat: Infinity,
               ease: "linear"
             }}
-            className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-neon-purple/20 to-neon-pink/20 rounded-full blur-3xl"
+            className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-gray-700/20 to-gray-500/30 rounded-full blur-3xl"
           />
         </div>      <motion.div
         variants={containerVariants}
@@ -90,9 +90,9 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, type: "spring" }}
-            className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-neon-pink/20 to-neon-blue/20 rounded-full border border-neon-blue/30 text-neon-blue text-sm font-medium"
+            className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-vibrant-violet/20 to-vibrant-cyan/20 rounded-full border border-vibrant-blue/40 text-vibrant-cyan text-sm font-medium"
           >
-            <Sparkles className="w-4 h-4 mr-2" />
+            <Sparkles className="w-4 h-4 mr-2 text-vibrant-yellow" />
             Available for opportunities
           </motion.span>
         </motion.div>
@@ -100,11 +100,11 @@ const Hero: React.FC = () => {
         {/* Main heading */}
         <motion.h1
           variants={itemVariants}
-          className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 cyber-font"
+          className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 font-serif"
         >
-          <span className="text-white">Hi, I'm </span>
+          <span className="text-white">Hello, I'm </span>
           <motion.span
-            className="bg-gradient-to-r from-neon-pink via-neon-purple to-neon-blue bg-clip-text text-transparent"
+            className="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent"
             animate={{
               backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
             }}
@@ -137,9 +137,9 @@ const Hero: React.FC = () => {
           className="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed"
         >
           Computer Science student at VIT with expertise in{' '}
-          <span className="text-neon-blue font-semibold">MERN Stack</span>,{' '}
-          <span className="text-neon-purple font-semibold">AWS Cloud</span>, and{' '}
-          <span className="text-neon-pink font-semibold">AI/ML</span>. 
+          <span className="text-vibrant-blue font-semibold">MERN Stack</span>,{' '}
+          <span className="text-vibrant-green font-semibold">AWS Cloud</span>, and{' '}
+          <span className="text-vibrant-orange font-semibold">AI/ML</span>. 
           Building innovative solutions and creating exceptional digital experiences.
         </motion.p>
 
@@ -151,10 +151,10 @@ const Hero: React.FC = () => {
           <motion.button
             whileHover={{ 
               scale: 1.05,
-              boxShadow: "0 0 30px rgba(255, 0, 110, 0.5)"
+              boxShadow: "0 0 30px rgba(255, 20, 147, 0.5)"
             }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-gradient-to-r from-neon-pink to-neon-purple rounded-full font-semibold text-white text-lg shadow-lg hover:shadow-neon-pink/50 transition-all duration-300 flex items-center gap-2"
+            className="px-8 py-4 bg-gradient-to-r from-vibrant-pink to-vibrant-violet rounded-full font-semibold text-white text-lg shadow-lg hover:shadow-vibrant-pink/50 transition-all duration-300 flex items-center gap-2"
           >
             <Download className="w-5 h-5" />
             Download Resume
@@ -163,10 +163,10 @@ const Hero: React.FC = () => {
           <motion.button
             whileHover={{ 
               scale: 1.05,
-              boxShadow: "0 0 30px rgba(58, 134, 255, 0.5)"
+              boxShadow: "0 0 30px rgba(0, 255, 255, 0.5)"
             }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 border-2 border-neon-blue text-neon-blue rounded-full font-semibold text-lg hover:bg-neon-blue hover:text-black transition-all duration-300"
+            className="px-8 py-4 border-2 border-vibrant-cyan text-vibrant-cyan rounded-full font-semibold text-lg hover:bg-vibrant-cyan hover:text-black transition-all duration-300"
           >
             View My Work
           </motion.button>
@@ -193,7 +193,7 @@ const Hero: React.FC = () => {
                 transition={{ delay: 1 + index * 0.2, type: "spring" }}
                 className="text-3xl md:text-4xl font-bold text-white mb-2"
               >
-                {stat.number}<span className="text-neon-blue">{stat.suffix}</span>
+                {stat.number}<span className="text-vibrant-yellow">{stat.suffix}</span>
               </motion.div>
               <div className="text-gray-400 font-medium">{stat.label}</div>
             </motion.div>
