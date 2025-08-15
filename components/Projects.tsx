@@ -60,6 +60,18 @@ const Projects: React.FC = () => {
       stats: { rank: 'Top 10', teams: '500+' },
       color: 'from-vibrant-violet to-vibrant-pink',
       achievement: true
+    },
+    {
+      title: 'Sarthak Law Academy Website',
+      subtitle: 'EdTech platform for legal education',
+      description: 'Developed and deployed the official MERN stack web platform for Sarthak Law Academy, serving 500+ users with student and admin dashboards for exam management, student tracking, and future online classes. Achieved 100% uptime with a secure backend (Heroku) and responsive frontend (Vercel) built on scalable architecture for EdTech solutions.',
+      tech: ['MERN Stack', 'Heroku', 'Vercel', 'EdTech', 'Admin Dashboard'],
+      link: 'https://www.sarthaklawacademy.com',
+      github: null,
+      image: '/api/placeholder/600/400',
+      featured: true,
+      stats: { users: '500+', uptime: '100%' },
+      color: 'from-vibrant-cyan to-vibrant-blue'
     }
   ]
 
@@ -217,26 +229,46 @@ const Projects: React.FC = () => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* View more projects CTA */}
-        <motion.div
-          variants={itemVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          className="text-center mt-16"
-        >
-          <motion.button
+          
+          {/* GitHub button as a card */}
+          <motion.div
+            variants={itemVariants}
             whileHover={{ 
               scale: 1.05,
-              boxShadow: "0 0 30px rgba(204, 204, 204, 0.3)"
+              boxShadow: "0 30px 60px rgba(0,0,0,0.4)"
             }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-gradient-to-r from-gray-700 to-gray-500 rounded-full font-semibold text-white text-lg hover:shadow-lg transition-all duration-300 flex items-center gap-2 mx-auto"
+            className="glass-morphism rounded-3xl overflow-hidden border border-white/10 hover:border-white/30 transition-all duration-500 relative group flex items-center justify-center min-h-[400px]"
           >
-            <Github className="w-5 h-5" />
-            View All Projects on GitHub
-          </motion.button>
+            <div className="text-center p-8">
+              <motion.div
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.6 }}
+                className="w-20 h-20 bg-gradient-to-r from-gray-700 to-gray-500 rounded-full flex items-center justify-center mx-auto mb-6"
+              >
+                <Github className="w-10 h-10 text-white" />
+              </motion.div>
+              
+              <h3 className="text-2xl font-bold text-white mb-4">More Projects</h3>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Explore my complete collection of projects, experiments, and open-source contributions on GitHub.
+              </p>
+              
+              <motion.a
+                href="https://github.com/SarthakRay26"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 0 30px rgba(204, 204, 204, 0.3)"
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gray-700 to-gray-500 rounded-full font-semibold text-white text-lg hover:shadow-lg transition-all duration-300"
+              >
+                <Github className="w-5 h-5" />
+                View All Projects
+              </motion.a>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

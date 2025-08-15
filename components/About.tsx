@@ -86,9 +86,10 @@ const About: React.FC = () => {
             variants={itemVariants}
             className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed"
           >
-            I'm a passionate Computer Science student at Vellore Institute of Technology with a strong foundation 
-            in full-stack development and cloud technologies. With a CGPA of 8.87/10, I combine academic excellence 
-            with practical experience in building scalable applications.
+            I don't just write code — I architect digital experiences that don't crash when your Wi-Fi does. 
+            Equal parts problem-solver, coffee enthusiast, and bug detective, I turn ideas into websites that 
+            make your life easier and my GitHub greener. I chase clean code, seamless UX, and that sweet 
+            deploy-without-errors moment. In a world of Ctrl+C, Ctrl+V, I like to Ctrl+Create.
           </motion.p>
         </motion.div>
 
@@ -122,7 +123,7 @@ const About: React.FC = () => {
                 </div>
               </div>
               <p className="text-gray-300 mb-2">2022 - Present</p>
-              <p className="text-2xl font-bold text-vibrant-yellow">CGPA: 8.87/10.0</p>
+              <p className="text-lg font-semibold text-vibrant-green">Computer Science & Engineering</p>
             </motion.div>
 
             <motion.div

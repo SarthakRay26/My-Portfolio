@@ -37,8 +37,8 @@ const Navbar: React.FC = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-gray-900/90 backdrop-blur-md shadow-lg shadow-gray-700/20' 
-          : 'bg-transparent'
+          ? 'bg-black/95 backdrop-blur-md shadow-lg shadow-gray-700/20 border-b border-white/10' 
+          : 'bg-black/80 backdrop-blur-sm border-b border-white/5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
           <motion.div
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="cyber-font text-2xl font-bold text-white"
+            className="cyber-font text-2xl font-bold text-white drop-shadow-lg"
           >
             <span className="text-vibrant-red">S</span>
             <span className="text-vibrant-blue">R</span>
@@ -61,7 +61,7 @@ const Navbar: React.FC = () => {
                 key={item.name}
                 href={item.href}
                 whileHover={{ y: -2 }}
-                className="text-white hover:text-vibrant-cyan transition-colors duration-300 relative group"
+                className="text-white hover:text-vibrant-cyan transition-colors duration-300 relative group font-medium drop-shadow-sm"
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-white to-gray-400 group-hover:w-full transition-all duration-300"></span>
@@ -79,7 +79,7 @@ const Navbar: React.FC = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
-                className="text-white hover:text-vibrant-green transition-colors duration-300"
+                className="text-white hover:text-vibrant-green transition-colors duration-300 drop-shadow-sm"
               >
                 <link.icon size={20} />
               </motion.a>

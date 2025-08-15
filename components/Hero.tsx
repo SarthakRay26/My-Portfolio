@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import { ChevronDown, Download, Sparkles } from 'lucide-react'
+import { Download } from 'lucide-react'
 
 const Hero: React.FC = () => {
   const [text, setText] = useState('')
@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
   }
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Animated background elements */}
         <div className="absolute inset-0">
           <motion.div
@@ -84,19 +84,6 @@ const Hero: React.FC = () => {
         animate="visible"
         className="relative z-10 text-center px-4 max-w-6xl mx-auto"
       >
-        {/* Greeting */}
-        <motion.div variants={itemVariants} className="mb-8">
-          <motion.span
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5, type: "spring" }}
-            className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-vibrant-violet/20 to-vibrant-cyan/20 rounded-full border border-vibrant-blue/40 text-vibrant-cyan text-sm font-medium"
-          >
-            <Sparkles className="w-4 h-4 mr-2 text-vibrant-yellow" />
-            Available for opportunities
-          </motion.span>
-        </motion.div>
-
         {/* Main heading */}
         <motion.h1
           variants={itemVariants}
@@ -136,7 +123,7 @@ const Hero: React.FC = () => {
           variants={itemVariants}
           className="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed"
         >
-          Computer Science student at VIT with expertise in{' '}
+          Computer Science student at VIT with strong academic foundation and expertise in{' '}
           <span className="text-vibrant-blue font-semibold">MERN Stack</span>,{' '}
           <span className="text-vibrant-green font-semibold">AWS Cloud</span>, and{' '}
           <span className="text-vibrant-orange font-semibold">AI/ML</span>. 
@@ -198,21 +185,6 @@ const Hero: React.FC = () => {
               <div className="text-gray-400 font-medium">{stat.label}</div>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          variants={itemVariants}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center text-gray-400"
-          >
-            <span className="text-sm mb-2">Scroll to explore</span>
-            <ChevronDown className="w-6 h-6" />
-          </motion.div>
         </motion.div>
       </motion.div>
     </div>
